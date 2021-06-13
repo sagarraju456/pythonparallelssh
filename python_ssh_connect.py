@@ -22,4 +22,4 @@ if __name__ == '__main__':
     	print "Enter the commands to be executed on the remote hosts, comma seperate or a list"
     	commands_list = list(input())
     	pool = ProcessingPool(nodes=len(hosts))
-    	outputs = pool.map(execute_commands, hosts, [commands_list, commands_list])
+    	outputs = pool.map(execute_commands, hosts, [commands_list * len(hosts)])
